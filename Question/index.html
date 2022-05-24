@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api work</title>
+    <link rel="stylesheet" href="./question.css">
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Questions from API</h1>
+    <div id="quiz_cards">
+        <div class="card">
+            <div class="question">
+                <h2></h2>
+            </div>
+            <div class="answer">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let Qurl = "https://alibaraka.pythonanywhere.com/api/questions/";
+        $.getJSON(Qurl, (data) => {
+            let info = "";
+            data.map((values) => {
+                info += `
+                <div class="card">
+                <div class="question">
+                    <h2>${values.question}</h2>
+                </div>
+                <div class="answer">
+                    <p>${values.answer}
+                    </p>
+                    </div> </div>
+                `
+            })
+            document.querySelector("#quiz_cards").innerHTML = info;
+        })
+    </script>
+</body>
+
+</html>

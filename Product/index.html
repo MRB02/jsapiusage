@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api work</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Products From API</h1>
+    <div id="cards">
+
+    </div>
+    <!-- <script src="./script.js"></script> -->
+
+    <script>
+        let APIurl = "https://alibaraka.pythonanywhere.com/api/products/";
+        $.getJSON(APIurl, (data) => {
+            let info = "";
+            data.map((values) => {
+                info += `
+                <div class="card">
+                    <h1 class="name">${values.name}</h1>
+                    <img src="${values.image}" alt="Bu yerda rasm bor">
+                    <div class="text">
+                        <p>${values.text}</p>
+                    </div>
+                </div>
+                `
+            })
+            document.querySelector("#cards").innerHTML = info;
+        })
+    </script>
+</body>
+
+</html>

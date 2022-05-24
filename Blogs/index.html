@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api work</title>
+    <link rel="stylesheet" href="./blog.css">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Blogs from API</h1>
+    <div id="blog_cards">
+
+    </div>
+
+    <!-- <script>
+        let Burl = "https://alibaraka.pythonanywhere.com/api/stories/";
+        $.getJSON(Burl, (data) => {
+            let info = "";
+            data.map((Blogs) => {
+                console.log(Blogs);
+                info += `
+                <div class="card">
+                    <h1 class="name">${Blogs.name}</h1>
+                    <img src="${Blogs.image}" alt="Bu yerda rasm bor">
+                    <div class="text">
+                        <p>${Blogs.text}</p>
+                    </div>
+                </div>
+                `
+            })
+            document.querySelector("#blog_cards").innerHTML = info;
+        })
+    </script> -->
+    <script src="/Product/script.js">
+    </script>
+</body>
+
+</html>
